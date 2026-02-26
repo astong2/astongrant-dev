@@ -5,7 +5,7 @@ function Projects() {
   return (
     <section className="page">
       <h1>Projects</h1>
-      <p>A few projects I’ve built with some still under construction.</p>
+      <p>A few projects that I’ve built with some still under construction.</p>
 
       <div className="projects-grid">
         {projects.map((project) => {

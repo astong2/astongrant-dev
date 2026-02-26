@@ -24,7 +24,7 @@ function handleSubmit(e) {
       <h1>Contact</h1>
 
       <p>
-        If you’re interested in working toether, discussing oppurtunities or simply connecting, feel free to reach out below.
+        If you’re interested in working together, discussing oppurtunities or simply connecting, feel free to reach out below.
       </p>
 
       <form className="contact-form" onSubmit={handleSubmit}>
