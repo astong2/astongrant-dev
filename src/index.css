@@ -30,6 +30,9 @@ body {
   justify-content: space-between;
   align-items: center;
   background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 .nav-left,
@@ -41,6 +44,7 @@ body {
 
 .navbar a {
   color: var(--text);
+  text-decoration: none;
 }
 
 .nav-time {
@@ -66,6 +70,86 @@ body {
   border-radius: 8px;
   cursor: pointer;
 }
+
+/* Hamburger (hidden on desktop) */
+.hamburger {
+  display: none;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.hamburger-lines {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  position: relative;
+}
+
+.hamburger-lines::before,
+.hamburger-lines::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+}
+
+.hamburger-lines::before {
+  top: -6px;
+}
+
+.hamburger-lines::after {
+  top: 6px;
+}
+
+/* Mobile menu dropdown (hidden by default) */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  padding: 12px 24px;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 10px 0;
+}
+
+.mobile-time {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Mobile rules */
+@media (max-width: 700px) {
+  .nav-left {
+    display: none;
+  }
+
+  .hamburger {
+    display: inline-flex;
+  }
+
+  .nav-time {
+    display: none; /* hide time on top bar on mobile */
+  }
+
+  .mobile-menu.open {
+    display: block;
+  }
+}
+
 
 
 * {
