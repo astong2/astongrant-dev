@@ -59,44 +59,46 @@ function Navbar() {
         <Link to="/contact" onClick={closeMenu}>Contact</Link>
       </div>
 
-      {/* Right: mobile hamburger + github + theme */}
       <div className="nav-right">
-        {/* Hamburger only shows on mobile via CSS */}
-        <button
+      {/* Hamburger (mobile only via CSS) */}
+       <button
           className="hamburger"
-          type="button"
-          aria-label="Open menu"
+         type="button"
+         aria-label="Open menu"
           aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
+         aria-controls="mobile-menu"
           onClick={() => setMenuOpen((v) => !v)}
-        >
-          <span className="hamburger-lines" />
-        </button>
+  >
+         <span className="hamburger-lines" />
+       </button>
 
-        {/* Hide time on top bar for mobile; keep on desktop */}
-        <span className="nav-time">{time}</span>
+  {/* Right-aligned actions */}
+  <div className="nav-actions">
+    {/* Keep time on desktop; hidden on mobile via CSS */}
+    <span className="nav-time">{time}</span>
 
-        <a
-          className="nav-icon"
-          href="https://github.com/astong2"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="GitHub"
-          title="GitHub"
-        >
-          {/* GitHub icon (SVG) */}
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-            <path
-              fill="currentColor"
-              d="M12 .5C5.73.5.75 5.48.75 11.76c0 4.99 3.24 9.22 7.73 10.72.56.1.77-.24.77-.54v-2.1c-3.14.68-3.8-1.34-3.8-1.34-.52-1.3-1.27-1.65-1.27-1.65-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.5-.28-5.13-1.25-5.13-5.57 0-1.23.44-2.23 1.17-3.02-.12-.29-.5-1.44.11-3 0 0 .95-.3 3.12 1.15.9-.25 1.86-.38 2.82-.38.96 0 1.92.13 2.82.38 2.17-1.45 3.12-1.15 3.12-1.15.61 1.56.23 2.71.11 3 .73.79 1.17 1.79 1.17 3.02 0 4.33-2.64 5.29-5.15 5.57.41.35.77 1.04.77 2.1v3.11c0 .3.2.65.78.54 4.48-1.5 7.72-5.73 7.72-10.72C23.25 5.48 18.27.5 12 .5z"
-            />
-          </svg>
-        </a>
+    <a
+      className="nav-icon"
+      href="https://github.com/astong2"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="GitHub"
+      title="GitHub"
+    >
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.42 7.86 10.95.58.11.79-.25.79-.56v-2.02c-3.2.7-3.88-1.37-3.88-1.37-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.25 3.33.96.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.73.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.35.77 1.05.77 2.12v3.14c0 .31.21.68.8.56C20.71 21.42 24 17.1 24 12 24 5.73 18.27.5 12 .5z"
+        />
+      </svg>
+    </a>
 
-        <button className="theme-btn" type="button" onClick={toggleTheme}>
-          {theme === "light" ? "🌙" : "☀️"}
-        </button>
-      </div>
+    <button className="theme-btn" type="button" onClick={toggleTheme}>
+      {theme === "light" ? "🌙" : "☀️"}
+    </button>
+  </div>
+</div>
+
 
       {/* Mobile dropdown menu */}
       <div
