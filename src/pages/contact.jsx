@@ -1,74 +1,85 @@
 import { useState } from "react";
 
-function Contact() {
+export default function Contact() {
+
   const [status, setStatus] = useState("");
 
-function handleSubmit(e) {
-  e.preventDefault();
+  async function handleSubmit(e) {
+    e.preventDefault();
 
-  if (!e.target.checkValidity()) {
-    e.target.reportValidity();
-    return;
+    const data = new FormData(e.target);
+
+    const response = await fetch("https://formspree.io/f/mnjbeglj", {
+      method: "POST",
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (response.ok) {
+      setStatus("SUCCESS");
+      e.target.reset();
+    } else {
+      setStatus("ERROR");
+    }
   }
 
-  setStatus("✅ Message captured (form wiring coming soon).");
-  e.target.reset();
-}
-
-
-
-
-
   return (
-    <section className="page">
-      <h1>Contact</h1>
+    <section className="contact">
+
+      <h1>Get in touch!</h1>
 
       <p>
-        If you’re interested in working together, discussing oppurtunities or simply connecting, feel free to reach out below.
+        If you’re interested in working together, discussing oppurtunities
+         or simply connecting, feel free to reach out below.
       </p>
 
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <div className="form-field">
-          <label htmlFor="name">Name</label>
-          <input id="name" name="name" type="text" placeholder="Your name" required />
-        </div>
+      <form onSubmit={handleSubmit}>
 
-        <div className="form-field">
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="you@example.com"
-            required
-            pattern=".+@.+\..+"
-          />
-        </div>
+        <input
+          type="text"
+          name="name"
+          placeholder="Your name"
+          required
+        />
 
-        <div className="form-field">
-          <label htmlFor="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="5"
-            placeholder="Your message"
-            required
-          />
-        </div>
+        <input
+          type="email"
+          name="email"
+          placeholder="You@example.com"
+          required
+        />
 
-        <button type="submit" className="submit-btn">
-          Send message
+        <textarea
+          name="message"
+          placeholder="Your message"
+          rows="5"
+          required
+        />
+
+        <button type="submit">
+          Send Message
         </button>
 
-        {status && <p style={{ marginTop: "14px" }}>{status}</p>}
       </form>
 
-      <p> Alternatively, you can contact me directly via email:
-        <br></br>
-         <a href="mailto:aston.g@hotmail.co.uk">aston.g@hotmail.co.uk</a></p>
+      {status === "SUCCESS" && (
+        <p className="form-success">
+          Message sent successfully!
+        </p>
+      )}
+
+      {status === "ERROR" && (
+        <p className="form-error">
+          Something went wrong. 
+          <br />
+          Please ensure all fields are filled correctly.
+          <br />
+          alternatively, you can email me directly at <a href="mailto:aston.g@hotmail.co.uk">aston.g@hotmail.co.uk</a>
+        </p>
+      )}
 
     </section>
   );
 }
-
-export default Contact;
