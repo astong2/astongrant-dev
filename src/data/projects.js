@@ -5,7 +5,7 @@ export const projects = [
     shortDescription:
       "A full-stack app for discovering and saving nature spots, with user accounts and database-backed content.",
     longDescription:
-      "NatureSpots is a full-stack web application that allows users to discover, create and manage nature locations. focused on building real user flows: authentication, protected actions, and database-driven content. It’s built with Flask on the backend and uses SQLite for data storage, with a simple frontend to browse and manage spots.",
+      "NatureSpots is a full-stack web application that allows users to discover, create and manage nature locations. focused on building real user flows: authentication, protected actions, and database-driven content. It’s built with Flask on the backend and uses SQLite for data storage, with a simple frontend to browse and manage spots. NOTE: The demo is hosted on a free infrastructure, so database may reset occasionally.",
     techStack: ["Python", "Flask", "SQL", "HTML/CSS"],
     features: [
       "User registration and login",
