@@ -14,7 +14,27 @@ function Home() {
         <Link to="/Projects">View Projects</Link>
         <Link to="/Contact">Contact Me</Link>
       </div>
+      <section className="featured-project">
+  <h2>Featured Project</h2>
+
+  <div className="featured-card">
+    <h3>NatureSpots</h3>
+
+    <p>
+      A full-stack web app for discovering and sharing peaceful nature locations.
+      Built with Flask, PostgreSQL and responsive design for real-world use.
+    </p>
+
+    <div className="featured-links">
+      <a href="/projects/naturespots">View Project</a>
+      <a href="https://naturespots.onrender.com" target="_blank" rel="noreferrer">
+        Live Demo
+      </a>
+    </div>
+  </div>
+</section>
     </section>
+    
   );
 }
 
