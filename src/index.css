@@ -544,3 +544,22 @@ button:focus-visible {
   background: var(--border);
   color: var(--text);
 }
+
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.screenshots-grid img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid solid #333;
+}
+
+@media (max-width: 768px) {
+  .screenshots-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,5 +1,11 @@
 import { Link, useParams } from "react-router-dom";
 import { projects } from "../data/projects";
+import homeImg from "../assets/naturespots/naturespots-home.png";
+import cardImg from "../assets/naturespots/naturespots-card.png";
+import addspotsImg from "../assets/naturespots/naturespots-AddSpots.png";
+import inspImg from "../assets/naturespots/naturespots-inspiration.png";
+import profileImg from "../assets/naturespots/naturespots-profile.png";
+import registerImg from "../assets/naturespots/naturespots-register.png";
 
 function ProjectDetail() {
   const { slug } = useParams();
@@ -47,6 +53,20 @@ function ProjectDetail() {
           )}
         </div>
       </header>
+
+      {title === "NatureSpots" && (
+        <section className="project-screenshots">
+          <h2>Screenshots</h2>
+          <div className="screenshots-grid">
+            <img src={homeImg} alt="Home page" />
+            <img src={cardImg} alt="Spot card" />
+            <img src={addspotsImg} alt="Add spot form" />
+            <img src={inspImg} alt="Inspiration page" />
+            <img src={profileImg} alt="Profile page" />
+            <img src={registerImg} alt="Register page" />
+          </div>
+        </section>
+      )}
 
       <section className="project-meta">
         <div className="meta-block">
