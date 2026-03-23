@@ -6,6 +6,11 @@ import addspotsImg from "../assets/naturespots/naturespots-AddSpots.png";
 import inspImg from "../assets/naturespots/naturespots-inspiration.png";
 import profileImg from "../assets/naturespots/naturespots-profile.png";
 import registerImg from "../assets/naturespots/naturespots-register.png";
+import heroImg from "../assets/tradesmen-demo/tradesmen-hero.png";
+import servicesImg from "../assets/tradesmen-demo/tradesmen-services.png";
+import reviewImg from "../assets/tradesmen-demo/tradesmen-review.png";
+import contactImg from "../assets/tradesmen-demo/tradesmen-contact.png";
+import galleryImg from "../assets/tradesmen-demo/tradesmen-gallery.png";
 
 function ProjectDetail() {
   const { slug } = useParams();
@@ -67,6 +72,20 @@ function ProjectDetail() {
           </div>
         </section>
       )}
+
+      {title === "Tradesmen Website Demo" && (
+        <section className="project-screenshots">
+          <h2>Screenshots</h2>
+          <div className="screenshots-grid">
+            <img src={heroImg} alt="Hero section" />
+            <img src={servicesImg} alt="Services section" />
+            <img src={reviewImg} alt="Testimonials section" />
+            <img src={contactImg} alt="Contact section" />
+            <img src={galleryImg} alt="Gallery section" />
+          </div>
+        </section>
+      )}
+
 
       <section className="project-meta">
         <div className="meta-block">

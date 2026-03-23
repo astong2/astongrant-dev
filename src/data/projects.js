@@ -1,5 +1,40 @@
 export const projects = [
+ 
   {
+  title: "Tradesmen Website Demo",
+  slug: "tradesmen-demo",
+  shortDescription: "A modern, conversion-focused website designed for local trades businesses to generate more enquiries and win more customers.",
+  longDescription: "This project is a reusable website template designed specifically for tradesmen such as plumbers, electricians, and builders. It focuses on clear messaging, trust signals, and strong call-to-actions to help turn visitors into enquiries.",
+  
+  techStack: ["React", "CSS", "Vercel"],
+  
+  features: [
+    "Responsive mobile-first design",
+    "Clear call-to-action sections",
+    "Services breakdown",
+    "Customer testimonials",
+    "Contact form for enquiries"
+  ],
+  
+  learnings: [
+    "How to structure a high-converting landing page",
+    "Improving UI/UX for real-world business use",
+    "Designing reusable templates for clients"
+  ],
+  
+  challenges: [
+    "Balancing clean design with conversion",
+    "Making layout responsive across devices",
+    "Structuring sections for real business needs"
+  ],
+  
+  links: {
+    live: "https://tradesmen-demo.vercel.app",
+    github: "https://github.com/astong2/tradesmen-demo"
+  }
+},
+ 
+{
     slug: "naturespots",
     title: "NatureSpots",
     shortDescription:
@@ -28,6 +63,7 @@ export const projects = [
       github: "https://github.com/astong2/NatureSpotsApp",
     },
   },
+
   {
     slug: "member-registration-system",
     title: "Member Registration System",
