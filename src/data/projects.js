@@ -1,7 +1,7 @@
 export const projects = [
  
   {
-  title: "Tradesmen Website Demo",
+  title: "Trades Business Website Demo",
   slug: "tradesmen-demo",
   shortDescription: "A modern, conversion-focused website designed for local trades businesses to generate more enquiries and win more customers.",
   longDescription: "This project is a reusable website template designed specifically for tradesmen such as plumbers, electricians, and builders. It focuses on clear messaging, trust signals, and strong call-to-actions to help turn visitors into enquiries.",
